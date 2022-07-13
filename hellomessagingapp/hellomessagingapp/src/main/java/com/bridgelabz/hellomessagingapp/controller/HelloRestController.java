@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/hello")
 public class HelloRestController {
     //* UC - 1 ------------------>
-    @RequestMapping(value = {"", "/", "/home"})
+    @GetMapping(value = {"", "/", "/home"})
     public String sayHello() {
         return "Hello Everyone!!!";
     }
 
-    @RequestMapping(value = {"/hello -w"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/hello -w"})
     public String sayHelloDifferently()
     {
         return "Hello  from BridgeLabz !!!";
     }
 
     //* UC - 2 --------------------->
-    @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/query"})
     public String sayHello(@RequestParam(value = "name") String name)
     {
         return "Hello " + name  + " from Bridgelabz !!!";
